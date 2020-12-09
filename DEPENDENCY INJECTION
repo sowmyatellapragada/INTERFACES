@@ -1,0 +1,52 @@
+using System;
+
+namespace Dependency_injection
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            businessclass obj = new businessclass(new studentservice());
+            businessclass ob = new businessclass(new teacherservice());
+            
+        }
+        public class businessclass
+        {
+            private Iservice iservice;
+            public businessclass(Iservice _iservice)
+            {
+                this.iservice = _iservice;
+                this.iservice.GetFirstName();
+                this.iservice.GetLastName();
+            }
+        }
+        public interface Iservice
+        {
+            void GetFirstName();
+            void GetLastName();
+
+        }
+        public class studentservice: Iservice
+        {
+            public void GetFirstName()
+            {
+                Console.WriteLine("sowmya");
+            }
+            public void GetLastName()
+            {
+                Console.WriteLine("Tellapragada");
+            }
+        }
+        public class teacherservice : Iservice
+        {
+            public void GetFirstName()
+            {
+                Console.WriteLine("Madhavi");
+            }
+            public void GetLastName()
+            {
+                Console.WriteLine("Gadicherla");
+            }
+        }
+    }
+}
