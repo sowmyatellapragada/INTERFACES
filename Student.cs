@@ -26,11 +26,11 @@ namespace Interface
            stname = name;
         }
 
-        #region Interface
-        public string GetName { get { return _name; } }
-        public int GetPaymentStudy { get { return _money; } }
-        public int GetYearStudy { get { return _yearsLearn; } }
-        public int GetRating { get { return _ratings; } }
-        #endregion
+        
+        public string GetName { get { return stname; } }
+        public int GetPaymentStudy { get { return stmoney; } }
+        public int GetYearStudy { get { return styearsLearn; } }
+        public int GetRating { get { return stratings; } }
+        
     }
 }
